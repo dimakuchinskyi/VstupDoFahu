@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700;800&display=swap');
+:root{
+  /* Light-mode palette (used by default) */
+  --bg:#f8fafc;           /* page background */
+  --hero-heading: var(--accent); /* default hero heading color — match .brand */
+  --heading-blue:#3b82f6; /* site-wide heading blue */
+  --text:#0f172a;         /* main text color */
+  --muted:#475569;        /* secondary text */
+  --primary:#06b6d4;      /* accent / primary action */
+  --accent:#4f46e5;       /* secondary accent */
+  --card:#ffffff;         /* surface / card background */
+  --card-border: rgba(15,23,42,0.04);
+  --card-shadow: 0 6px 18px rgba(12,15,20,0.06);
+  --card-shadow-hover: 0 12px 30px rgba(12,15,20,0.12);
+  --footer-bg:#0b1220;    /* footer background (dark) */
+  --footer-text:#cbd5e1;  /* footer text color */
+  --container:1100px;
+}
+
+/* --- User request: remove all visual styles for h1 --- */
+/* This neutralizes any gradients, clipping, animations or text-shadows applied earlier
+   while preserving semantic size/flow of headings. */
+h1 {
+  color: inherit !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: none !important;
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+  -webkit-text-stroke: 0 !important;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:'Unbounded', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;color:var(--text);background:var(--bg);line-height:1.5;overflow-x:hidden}
+
+/* Ensure important UI elements explicitly use Unbounded */
+h1,h2,h3,h4,h5,h6,button,a,input,textarea,select { font-family:'Unbounded', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.75rem 0;margin-left:200px}
+.brand{font-weight:700;color:var(--accent);text-decoration:none;font-size:1.15rem;white-space:nowrap;display:inline-block;margin-left:-30px;position:relative;transform:translateX(-90px)}
+.site-nav{display:flex;gap:1.25rem;align-items:center}
+.site-nav a{color:var(--muted);text-decoration:none;padding:0.45rem 0.9rem;border-radius:6px;transition:all 0.2s;display:inline-block;white-space:nowrap}
+.site-nav a:hover{background:#f1f5f9;color:#0f172a}
+.site-nav a.active{background:#e6eef9;color:var(--accent);font-weight:600}
+.site-nav a.cta{background:linear-gradient(90deg,var(--accent),var(--primary));color:#fff}
+.site-nav a.cta:hover{opacity:0.9;background:linear-gradient(90deg,var(--primary),var(--accent))}
+#nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
+
+.hero{padding:3rem 0;background-color:#ffffff;background:linear-gradient(180deg,#fff 0%, #fbfdff 100%) !important}
+.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:center}
+.hero h1{margin:0;font-size:2rem;color:var(--hero-heading) !important;font-weight:700;letter-spacing:-0.2px}
+
+/* Ensure hero heading stays a solid, darker color and isn't clipped by gradients */
+.hero h1{background:none !important; -webkit-text-fill-color: initial !important; -webkit-background-clip: initial !important;}
+/* Make all headings default to the blue color */
+h1,h2,h3,h4,h5,h6{color:var(--heading-blue)}
+.lead{color:var(--muted);margin-top:0.4rem}
+.meta{color:var(--muted);font-size:0.95rem}
+.hero-actions{margin-top:1rem;display:flex;gap:0.75rem}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;background:#e6eef9;color:#0f172a;text-decoration:none;border:1px solid rgba(15,23,42,0.04)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--primary));color:#fff;border:0}
+
+.section{padding:3rem 0}
+.section.alt{background:var(--bg)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+.card{background:var(--card);border-radius:12px;padding:1rem;box-shadow:0 6px 18px rgba(12,15,20,0.06)}
+/* Ensure card-like surfaces display readable text (fix white-on-white issues) */
+.card, .lab-card, .project, .contact-form, .contact-info, .quick-link-card, .info-block, .program-block, .competency-card, .career-path, .stat-card, .software-card, .access-card, .showcase-project, .category-card, .achievement-card, .partner-card, .contact-form-page, .contact-info-box, .direction-card, .faq-item, .source-item, .disclaimer-section {
+  color: var(--text);
+}
+.features-list{list-style:disc;padding-left:1.2rem}
+.program-cta{margin-top:1rem;display:flex;gap:0.6rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.lab-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(12,15,20,0.05)}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.project{background:var(--card);padding:1rem;border-radius:10px}
+.contact-section{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:start}
+.contact-form{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(12,15,20,0.05)}
+.contact-form label{display:block;font-size:0.9rem;color:var(--muted);margin-bottom:0.6rem}
+.contact-form input,.contact-form textarea{width:100%;padding:0.6rem;border-radius:8px;border:1px solid #e6eef9;margin-top:0.3rem}
+.form-actions{display:flex;gap:0.5rem;margin-top:0.5rem}
+.contact-info{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 18px rgba(12,15,20,0.03)}
+.form-status{margin-top:0.6rem;color:green}
+
+.site-footer{background:#0b1220;color:#cbd5e1;padding:1.2rem 0;margin-top:1.5rem}
+.site-footer p{margin:0}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .contact-section{grid-template-columns:1fr}
+  #nav-toggle{display:block}
+  .site-nav{position:fixed;right:1rem;top:64px;background:#fff;padding:0.6rem;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.08);flex-direction:column;display:none;gap:0.75rem}
+  .site-nav a{white-space:normal}
+  .site-nav.show{display:flex}
+}
+
+/* Prevent brand wrapping on narrow headers and scale down on very small screens */
+@media (max-width:600px){
+  .brand{font-size:1rem;margin-left:0;padding-left:0;transform:none;position:static}
+}
+
+/* New page styles */
+.page-hero{background:linear-gradient(135deg,var(--accent) 0%,var(--primary) 100%);color:#fff;padding:3rem 0;margin-bottom:2rem}
+.page-hero h1{margin:0;font-size:2.5rem}
+.page-hero .lead{font-size:1.1rem;margin-top:0.5rem;opacity:0.95}
+/* Profile block used on personal page */
+.profile{display:flex;gap:1rem;align-items:center;margin-top:1rem}
+.profile-photo{width:160px;height:160px;object-fit:cover;border-radius:12px;border:4px solid rgba(255,255,255,0.12);box-shadow:0 6px 18px rgba(2,6,23,0.18)}
+.profile-body ul{margin:0.25rem 0 0 1.2rem}
+.profile-body .lead{margin:0}
+/* Contact links in page hero (me.html): white text, no underline */
+.page-hero .contact-list a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.page-hero .contact-list a:hover,
+.page-hero .contact-list a:focus {
+  opacity: 0.92;
+  text-decoration: none !important;
+}
+
+/* Header variant when placed over a dark page hero: white nav links, no underline */
+.site-header.over-hero .site-nav a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.site-header.over-hero .site-nav a:hover,
+.site-header.over-hero .site-nav a:focus{
+  opacity: 0.95;
+  text-decoration: none !important;
+}
+.site-header.over-hero .site-nav a.cta{
+  /* ensure CTA stays readable on dark header */
+  color: #fff !important;
+}
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px) scale(.995); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Heading reveal: subtle pop + lift */
+@keyframes headingReveal {
+  from { opacity: 0; transform: translateY(28px) scale(.992); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+/* Subtle continuous color shift for hero heading (keeps strong contrast but gives life) */
+@keyframes heroColorShift {
+  0% { color: var(--hero-heading); }
+  50% { color: color-mix(in srgb, var(--hero-heading) 70%, var(--accent) 30%); }
+  100% { color: var(--hero-heading); }
+}
+
+/* Hero heading animation: reveal + subtle color shift */
+.hero-heading-anim{ color:var(--heading-blue); text-shadow: 0 1px 0 rgba(255,255,255,0.6); }
+.hero-heading-anim.play{ animation: headingReveal 900ms cubic-bezier(.15,.85,.24,1) forwards; }
+.hero-heading-anim.shift{ animation: heroColorShift 4s ease-in-out infinite; }
+
+@keyframes floatY {
+  0% { transform: translateY(0) rotate(0deg); }
+  40% { transform: translateY(-14px) rotate(-2deg); }
+  60% { transform: translateY(-10px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes btnShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* initial state for elements that will animate in */
+.anim { opacity: 0; transform: translateY(24px) scale(.995); will-change: opacity, transform; }
+.anim.play { animation: fadeUp 900ms cubic-bezier(.2,.9,.2,1) forwards; }
+
+/* Heading-specific animation helper */
+.heading-anim{ opacity:0; transform: translateY(18px) scale(.995); will-change: opacity, transform; }
+.heading-anim.play{ animation: headingReveal 900ms cubic-bezier(.15,.85,.24,1) forwards; animation-delay: var(--delay, 0ms); }
+
+/* make primary button gradient subtly move on hover and optionally animate continuously */
+.btn.primary{ background-size:200% 100%; transition:background-position .6s ease; }
+.btn.primary:hover{ background-position:100% 50%; }
+.btn.primary.animated{ animation: btnShift 6s linear infinite; }
+
+/* float effect for hero visual (svg or img) */
+.hero-visual svg,
+.hero-visual img{ display:block; max-width:100%; height:auto; animation: floatY 3.2s ease-in-out infinite; border-radius:10px; will-change: transform; transform-origin:center center; }
+
+/* ensure staggered reveal when JS sets --delay */
+.anim{ animation-delay: var(--delay, 0s); }
+.card-link{display:inline-block;margin-top:0.5rem;color:var(--primary);font-weight:500;text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.quick-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.quick-link-card{background:var(--card);padding:1rem;border-radius:10px;text-decoration:none;color:inherit;display:block;box-shadow:0 4px 12px rgba(12,15,20,0.04);transition:transform 0.2s,box-shadow 0.2s}
+.quick-link-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(12,15,20,0.1)}
+.quick-link-card h3{margin:0 0 0.5rem;color:var(--accent)}
+.quick-link-card p{margin:0;color:var(--muted);font-size:0.9rem}
+.highlight-box{background:#f0f9ff;border-left:4px solid var(--primary);padding:1rem;margin:1rem 0;border-radius:6px}
+.info-blocks{display:grid;gap:1rem;margin-top:1rem}
+.info-block{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.info-block h3{margin:0 0 0.5rem;font-size:1.1rem}
+.program-blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem}
+.program-block{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.program-block h3{margin:0;color:var(--accent);font-size:1.2rem}
+.program-block h4{margin:0.5rem 0;font-size:1rem;color:var(--muted)}
+.program-block ul{margin:0.5rem 0;padding-left:1.2rem}
+.competencies{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.competency-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.competency-card h4{margin:0 0 0.5rem;font-size:1rem}
+.careers{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.career-path{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04);position:relative;padding-bottom:2.5rem}
+.career-path h4{margin:0 0 0.5rem;color:var(--accent)}
+.salary{position:absolute;bottom:1rem;right:1rem;background:var(--primary);color:#fff;padding:0.3rem 0.6rem;border-radius:6px;font-size:0.85rem;font-weight:600}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1rem}
+.stat-card{background:var(--card);padding:1.5rem;border-radius:10px;text-align:center;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.stat-number{font-size:2.5rem;font-weight:700;color:var(--accent)}
+.stat-label{color:var(--muted);font-size:0.9rem;margin-top:0.3rem}
+.lab-detail{margin-top:1rem}
+.equipment-list{list-style:none;padding:0}
+.equipment-list li{padding:0.4rem 0;padding-left:1.5rem;position:relative}
+.equipment-list li:before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:700}
+.software-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem}
+.software-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.software-card h4{margin:0 0 0.5rem;color:var(--accent)}
+.software-card ul{margin:0;padding-left:1.2rem}
+.access-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem}
+.access-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.access-card h3{margin:0 0 0.5rem;font-size:1.1rem}
+.project-stats{display:flex;justify-content:space-around;flex-wrap:wrap;gap:1rem;margin-top:1rem}
+.stat-item{text-align:center}
+.stat-item strong{display:block;font-size:2rem;color:var(--accent)}
+.stat-item span{color:var(--muted);font-size:0.9rem}
+.project-showcase{display:grid;gap:1.5rem;margin-top:1rem}
+.showcase-project{background:var(--card);padding:1.5rem;border-radius:12px;box-shadow:0 6px 18px rgba(12,15,20,0.06)}
+.project-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem}
+.project-header h3{margin:0;font-size:1.3rem}
+.project-tag{background:#e6eef9;color:var(--accent);padding:0.3rem 0.6rem;border-radius:6px;font-size:0.85rem;font-weight:500}
+.project-content p{margin:0.5rem 0}
+.project-links{margin-top:1rem;display:flex;gap:0.5rem}
+.category-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem}
+.category-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.category-card h3{margin:0 0 0.5rem;font-size:1.1rem}
+.category-card ul{margin:0.5rem 0;padding-left:1.2rem;color:var(--muted)}
+.achievements{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
+.achievement-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.achievement-card h4{margin:0 0 0.5rem;font-size:1rem}
+.partners-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:1rem}
+.partner-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.partner-card h4{margin:0 0 0.5rem;color:var(--accent)}
+.contact-layout{display:grid;grid-template-columns:2fr 1fr;gap:2rem;align-items:start}
+.contact-form-page{background:var(--card);padding:1.5rem;border-radius:10px;box-shadow:0 6px 18px rgba(12,15,20,0.05)}
+.contact-form-page label{display:block;margin-bottom:1rem;font-size:0.9rem;color:var(--text);font-weight:500}
+.contact-form-page input,.contact-form-page textarea,.contact-form-page select{width:100%;padding:0.6rem;border-radius:8px;border:1px solid #e6eef9;margin-top:0.3rem;font-family:inherit}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.required{color:crimson}
+.checkbox-label{display:flex;align-items:center;gap:0.5rem}
+.checkbox-label input{width:auto}
+.contact-sidebar{display:grid;gap:1rem}
+.contact-info-box{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.contact-info-box h3{margin:0 0 0.5rem;font-size:1rem}
+.contact-info-box p{margin:0.3rem 0;font-size:0.9rem}
+.social-links{display:flex;flex-direction:column;gap:0.3rem}
+.social-link{color:var(--primary);text-decoration:none;font-size:0.9rem}
+.social-link:hover{text-decoration:underline}
+.map-container{margin-top:1rem}
+.map-placeholder{background:#f1f5f9;padding:3rem;text-align:center;border-radius:10px;border:2px dashed #cbd5e1}
+.map-note{color:var(--muted);font-size:0.85rem;margin-top:0.5rem}
+.directions{margin-top:2rem}
+.direction-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1rem}
+.direction-card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.direction-card h4{margin:0 0 0.5rem;font-size:1rem}
+.faq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;margin-top:1rem}
+.faq-item{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.faq-item h4{margin:0 0 0.5rem;font-size:1rem;color:var(--accent)}
+.cta-section{text-align:center;padding:2rem 0}
+.cta-section .hero-actions{justify-content:center}
+.sources-list{display:grid;gap:1rem;margin-top:1rem}
+.source-item{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 4px 12px rgba(12,15,20,0.04)}
+.source-item h3{margin:0 0 0.5rem;font-size:1.1rem;color:var(--accent)}
+.source-item p{margin:0.3rem 0;color:var(--muted);font-size:0.9rem}
+.source-link{display:inline-block;margin-top:0.5rem;color:var(--primary);font-weight:500;text-decoration:none;transition:color 0.2s}
+.source-link:hover{color:var(--accent);text-decoration:underline}
+.disclaimer-section{background:var(--card);padding:1.5rem;border-radius:10px;border-left:4px solid var(--accent)}
+.footer-content{text-align:center}
+.footer-links{margin-top:0.5rem;font-size:0.9rem}
+.footer-links a{color:#64748b;text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--muted);text-decoration:underline}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .contact-section{grid-template-columns:1fr}
+  .contact-layout{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  #nav-toggle{display:block}
+  .site-nav{position:fixed;right:1rem;top:64px;background:#fff;padding:0.6rem;border-radius:10px;box-shadow:0 10px 30px rgba(2,6,23,0.08);flex-direction:column;display:none;z-index:100}
+  .site-nav.show{display:flex}
+}
+
+@media (prefers-color-scheme:dark){
+  /* Dark-mode variable overrides so components using variables adapt correctly */
+  :root{
+    --bg:#061023;
+    --text:#e6eef9;
+    --muted:#94a3b8;
+    --primary:#0ea5b8;
+    --accent:#3730a3;
+    /* make card noticeably lighter than page bg so it stands out */
+    --card:#0b1830;
+    --card-border: rgba(255,255,255,0.04);
+    --card-shadow: 0 6px 18px rgba(2,6,23,0.45);
+    --footer-bg:#030617;
+    --footer-text:#cbd5e1;
+    /* hero heading in dark mode should use main text color for contrast */
+      --hero-heading: var(--accent);
+      --heading-blue:#7dd3fc;
+  }
+
+  body{background:var(--bg);color:var(--text)}
+  .card,.lab-card,.project,.contact-form,.contact-info,.quick-link-card,.info-block,.program-block,.competency-card,.career-path,.stat-card,.software-card,.access-card,.showcase-project,.category-card,.achievement-card,.partner-card,.contact-form-page,.contact-info-box,.direction-card,.faq-item,.source-item,.disclaimer-section{background:var(--card)}
+  .site-footer{background:var(--footer-bg);color:var(--footer-text)}
+  .page-hero{background:linear-gradient(135deg,#3730a3 0%,#0e7490 100%)}
+  /* Make the default hero darker in dark mode so light text remains readable */
+  .hero{background:linear-gradient(180deg,#041427 0%, #021224 100%)}
+  input,textarea,select{background:#0b1220;color:var(--text);border-color:#1e293b}
+  .highlight-box{background:#0b1827;border-left-color:var(--primary)}
+  .map-placeholder{background:#0b1220;border-color:#1e293b}
+  /* Ensure gradient-clipped hero headings remain readable in dark mode */
+  .page-hero h1, .hero h1{
+    background: none !important;
+    -webkit-background-clip: unset;
+    background-clip: unset;
+    color: var(--text) !important;
+    animation: none !important;
+  }
+}
+
+/* Apply distinct border/shadow to card-like surfaces to separate from background */
+.card, .lab-card, .project, .contact-form, .contact-info, .quick-link-card, .info-block, .program-block, .competency-card, .career-path, .stat-card, .software-card, .access-card, .showcase-project, .category-card, .achievement-card, .partner-card, .contact-form-page, .contact-info-box, .direction-card, .faq-item, .source-item, .disclaimer-section {
+  background: var(--card) !important;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+/* Card hover lift / micro-interaction */
+.card, .quick-link-card, .project, .showcase-project, .stat-card, .partner-card{ 
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s cubic-bezier(.2,.9,.2,1);
+}
+.card:hover, .quick-link-card:hover, .project:hover, .showcase-project:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* Button micro-interactions */
+.btn{ transition: transform .18s ease, box-shadow .18s ease; }
+.btn:hover{ transform: translateY(-3px); }
+.btn:active{ transform: translateY(-1px) scale(.998); }
+.btn:focus-visible{ outline:3px solid rgba(99,102,241,0.18); outline-offset:3px; }
+
+/* Animated gradient text for hero headings */
+@keyframes textShift { 0%{ background-position:0% 50% } 50%{ background-position:100% 50% } 100%{ background-position:0% 50% } }
+/* Ensure .hero headings use the hero color, and banner (.page-hero) headings default to white */
+.hero h1 { color: var(--hero-heading) !important; }
+.page-hero h1 { color: #fff; }
+
+/* Apply gradient clipped text only when both clipping and text-fill are supported
+   to avoid leaving headings transparent in browsers with partial support. */
+@supports ((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) {
+  /* High-contrast shimmer specifically for banner headings (.page-hero) */
+  .page-hero h1 {
+    background: linear-gradient(90deg, #ffffff 0%, #e6f2ff 40%, #ffffff 100%);
+    background-size:200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShift 5s linear infinite;
+    text-shadow: 0 2px 6px rgba(2,6,23,0.35);
+  }
+
+  /* Apply animated gradient shimmer to all other headings (h1..h6) and any element
+     with .heading-gradient. */
+  h1,h2,h3,h4,h5,h6, .heading-gradient{
+    /* soft blue shimmer: from light to medium blue */
+    background: linear-gradient(90deg, #bfdbfe 0%, #3b82f6 50%, #60a5fa 100%);
+    background-size:200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShift 5s linear infinite;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+  .anim, .card, .quick-link-card, .project, .showcase-project, .hero-visual svg, .btn.primary.animated, .page-hero h1, .hero h1{ animation: none !important; transition: none !important; transform: none !important; }
+}
+
+/* Fallback when clipping isn't supported: keep page banner headings white
+   for contrast on dark banners, and keep hero headings the site-blue. */
+@supports not ((-webkit-background-clip: text) and (-webkit-text-fill-color: transparent)) {
+  .page-hero h1 {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  .hero h1 {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    color: var(--heading-blue) !important;
+    opacity: 1 !important;
+  }
+
+  /* Other headings should fall back to the blue color */
+  h2,h3,h4,h5,h6, .heading-gradient {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    color: var(--heading-blue) !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Note: previous global reset for h1 was removed so headings can use animated shimmer */
+
+/* Strong override: ensure hero h1 uses hero color no matter earlier global resets */
+.hero .hero-content h1 {
+  color: var(--hero-heading) !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: none !important;
+}
+
+/* Stronger explicit fill to override gradient clipping in all browsers */
+.hero .container .hero-grid .hero-content > h1,
+.hero .hero-content > h1 {
+  color: var(--hero-heading) !important;
+  -webkit-text-fill-color: var(--hero-heading) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+  opacity: 1 !important;
+}

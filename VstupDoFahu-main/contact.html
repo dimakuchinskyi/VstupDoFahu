@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Контакти — Кафедра комп'ютерних наук ВНТУ</title>
+  <meta name="description" content="Зв'яжіться з кафедрою комп'ютерних наук ВНТУ. Консультації, вступ, екскурсії лабораторіями VR/AR" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Кафедра комп'ютерних наук ВНТУ</a>
+      <button id="nav-toggle" aria-label="Відкрити меню">☰</button>
+      <nav id="site-nav" class="site-nav">
+        <a href="index.html">Головна</a>
+        <a href="about.html">Про VR/AR</a>
+        <a href="programs.html">Спеціальність</a>
+        <a href="labs.html">Лабораторії</a>
+        <a href="projects.html">Проєкти</a>
+        <a href="me.html">Про мене</a>
+        <a href="contact.html" class="cta active">Зв'язок</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Зв'яжіться з нами</h1>
+        <p class="lead">Маєте питання? Хочете записатися на екскурсію? Ми завжди раді допомогти!</p>
+      </div>
+    </section>
+
+    <section class="container section">
+      <div class="contact-layout">
+        <div class="contact-main">
+          <h2>Надішліть нам повідомлення</h2>
+          <p>Заповніть форму нижче, і ми зв'яжемося з вами найближчим часом</p>
+          
+          <form id="contact-form" class="contact-form-page" aria-label="Форма зв'язку">
+            <div class="form-row">
+              <label>
+                Ім'я <span class="required">*</span>
+                <input type="text" name="name" id="name" placeholder="Ваше ім'я" required>
+              </label>
+              <label>
+                Прізвище <span class="required">*</span>
+                <input type="text" name="surname" id="surname" placeholder="Ваше прізвище" required>
+              </label>
+            </div>
+
+            <div class="form-row">
+              <label>
+                Email <span class="required">*</span>
+                <input type="email" name="email" id="email" placeholder="your@email.com" required>
+              </label>
+              <label>
+                Телефон
+                <input type="tel" name="phone" id="phone" placeholder="+380 XX XXX XXXX">
+              </label>
+            </div>
+
+            <label>
+              Тема звернення <span class="required">*</span>
+              <select name="subject" id="subject" required>
+                <option value="">Оберіть тему</option>
+                <option value="admission">Вступ на навчання</option>
+                <option value="excursion">Екскурсія лабораторіями</option>
+                <option value="consultation">Консультація викладача</option>
+                <option value="collaboration">Співпраця/партнерство</option>
+                <option value="project">Проєктна робота</option>
+                <option value="other">Інше</option>
+              </select>
+            </label>
+
+            <label>
+              Повідомлення <span class="required">*</span>
+              <textarea name="message" id="message" rows="6" placeholder="Напишіть ваше запитання або повідомлення..." required></textarea>
+            </label>
+
+            <label class="checkbox-label">
+              <input type="checkbox" name="consent" id="consent" required>
+              <span>Я погоджуюсь з обробкою персональних даних</span>
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="btn primary">Надіслати повідомлення</button>
+              <button type="reset" class="btn">Очистити форму</button>
+            </div>
+
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <aside class="contact-sidebar">
+          <div class="contact-info-box">
+            <h3>Адреса</h3>
+            <p>Вінницький національний технічний університет<br>
+            Кафедра комп'ютерних наук<br>
+            вул. Хмельницьке шосе, 95<br>
+            м. Вінниця, 21021, Україна</p>
+          </div>
+
+          <div class="contact-info-box">
+            <h3>Телефони</h3>
+            <p><strong>Приймальна кафедри:</strong><br>
+            +380 (432) 59-85-45</p>
+            <p><strong>Завідувач кафедри:</strong><br>
+            +380 (432) 59-85-46</p>
+          </div>
+
+          <div class="contact-info-box">
+            <h3>Email</h3>
+            <p><strong>Загальні питання:</strong><br>
+            cs@vntu.edu.ua</p>
+            <p><strong>Вступ:</strong><br>
+            admission@vntu.edu.ua</p>
+          </div>
+
+          <div class="contact-info-box">
+            <h3>Графік роботи</h3>
+            <p><strong>Пн-Пт:</strong> 8:00 - 17:00<br>
+            <strong>Обідня перерва:</strong> 12:00 - 13:00<br>
+            <strong>Сб-Нд:</strong> Вихідні</p>
+          </div>
+
+          <div class="contact-info-box">
+            <h3>Соцмережі</h3>
+            <div class="social-links">
+              <a href="#" class="social-link">Facebook</a>
+              <a href="#" class="social-link">Instagram</a>
+              <a href="#" class="social-link">LinkedIn</a>
+              <a href="#" class="social-link">YouTube</a>
+              <a href="#" class="social-link">Telegram</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container section alt">
+      <h2>Як нас знайти?</h2>
+      <p>Кафедра комп'ютерних наук розташована в головному навчальному корпусі ВНТУ</p>
+      
+      <div class="map-container">
+        <div class="map-placeholder">
+          <p>Тут буде інтерактивна карта Google Maps</p>
+          <p class="map-note">(Для інтеграції потрібен Google Maps API ключ)</p>
+          <a href="https://www.google.com/maps/search/Вінницький+національний+технічний+університет" target="_blank" class="btn">Відкрити в Google Maps</a>
+        </div>
+      </div>
+
+      <div class="directions">
+        <h3>Як дістатися:</h3>
+        <div class="direction-grid">
+          <div class="direction-card">
+            <h4>Громадським транспортом</h4>
+            <p><strong>Автобуси:</strong> №№ 1, 2, 5, 12, 22, 25<br>
+            <strong>Тролейбуси:</strong> №№ 5, 6<br>
+            <strong>Зупинка:</strong> "ВНТУ"</p>
+          </div>
+          <div class="direction-card">
+            <h4>Автомобілем</h4>
+            <p>Паркування біля головного корпусу ВНТУ.<br>
+            Від центру міста: 15 хвилин<br>
+            GPS: 49.2347, 28.4816</p>
+          </div>
+          <div class="direction-card">
+            <h4>Пішки</h4>
+            <p>Від залізничного вокзалу: 25 хвилин<br>
+            Від центру міста (Майдан Незалежності): 20 хвилин</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2>Часті запитання (FAQ)</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>Як записатися на екскурсію?</h4>
+          <p>Заповніть форму вище, обравши "Екскурсія лабораторіями", або зателефонуйте у приймальну кафедри. Екскурсії проводяться щосереди та щоп'ятниці о 14:00.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Які документи потрібні для вступу?</h4>
+          <p>Атестат про повну загальну середню освіту, результати ЗНО/НМТ, заява, медична довідка. Детальну інформацію можна отримати у приймальній комісії.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Чи можна навчатися заочно?</h4>
+          <p>Спеціальність "Комп'ютерні науки" доступна на денній формі навчання. Для роботюючих є можливість навчання на магістратурі з гнучким графіком.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Скільки коштує навчання?</h4>
+          <p>Є бюджетні та контрактні місця. Вартість контракту: від 25 000 грн/рік. Можливість отримання стипендії для бюджетних студентів.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Чи надається гуртожиток?</h4>
+          <p>Так, іногородні студенти можуть отримати місце у гуртожитку ВНТУ. Подача заяви під час вступу.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Які можливості для працевлаштування?</h4>
+          <p>Кафедра співпрацює з IT-компаніями. Студенти старших курсів можуть проходити стажування та працювати part-time. Є програма career support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section cta-section">
+      <h2>Готові розпочати свою VR/AR кар'єру?</h2>
+      <p>Не відкладайте — зв'яжіться з нами вже сьогодні!</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#contact-form">Заповнити форму</a>
+        <a class="btn" href="programs.html">Дізнатися про програму</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© Кафедра комп'ютерних наук ВНТУ — Спеціальність: Комп'ютерні науки. Демонстраційний сайт про VR/AR технології.</p>
+      <p class="footer-links">
+        <a href="sources.html">Джерела інформації</a> · 
+        <a href="https://vntu.edu.ua/" target="_blank" rel="noopener">Офіційний сайт ВНТУ</a>
+      </p>
+      <p class="site-credit">Учень кафедри «Комп'ютерних наук», групи 2КН-25Б — Кучинський Дмитро.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
